@@ -1,0 +1,14 @@
+{
+  "name": "@roft/dp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://gitee.com/roft/helper-starter-kit.git",
+  "author": "roftLin <315779478@qq.com>",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "mocha": "^8.0.1"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
+}
