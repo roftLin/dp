@@ -22,7 +22,19 @@ describe('index', () => {
 
   it('should equal', () => {
     let o = {}
+    let foo = () => 3
+    assert.deepEqual(index(foo)(o), {});
+  })
+
+  it('should equal', () => {
+    let o = {}
     let foo = (params) => 3
     assert.deepEqual(index(foo, o), {});
+  })
+
+  it('should equal', () => {
+    let o = {}
+    let foo = (params) => 3
+    assert.deepEqual(index(foo)(o), {});
   })
 })

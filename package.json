@@ -2,13 +2,17 @@
   "name": "@roft/dp",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://gitee.com/roft/helper-starter-kit.git",
+  "repository": "https://github.com/roftLin/dp.git",
   "author": "roftLin <315779478@qq.com>",
   "license": "GPL-3.0",
   "devDependencies": {
-    "mocha": "^8.0.1"
+    "mocha": "^8.0.1",
+    "coveralls": "^3.1.0",
+    "istanbul": "^0.4.5"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "cover": "istanbul cover _mocha -- test/ --no-timeouts",
+    "istanbul": "cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   }
 }
