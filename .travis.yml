@@ -14,8 +14,8 @@ branches:
 install:
 - npm install
 script:
-  - npm run lint
-  - npm run build
+  # - npm run lint
+  # - npm run build
   - npm run cover
 after_success:
 - npm run coveralls
