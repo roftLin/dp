@@ -6,13 +6,13 @@
   "author": "roftLin <315779478@qq.com>",
   "license": "GPL-3.0",
   "devDependencies": {
-    "mocha": "^8.0.1",
     "coveralls": "^3.1.0",
-    "istanbul": "^0.4.5"
+    "istanbul": "^0.4.5",
+    "mocha": "^8.0.1"
   },
   "scripts": {
     "test": "mocha",
-    "cover": "istanbul cover _mocha -- test/ --no-timeouts",
-    "istanbul": "cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "cover": "istanbul cover ./node_modules/mocha/bin/_mocha -- test/ --no-timeouts",
+    "istanbul": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- test/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   }
 }
