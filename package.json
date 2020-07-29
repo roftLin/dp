@@ -13,6 +13,6 @@
   "scripts": {
     "test": "mocha",
     "cover": "istanbul cover ./node_modules/mocha/bin/_mocha -- test/ --no-timeouts",
-    "istanbul": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- test/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- test/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   }
 }
