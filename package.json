@@ -1,18 +1,18 @@
 {
-    "name": "@roft/dp",
-    "version": "1.0.0",
-    "main": "index.js",
-    "repository": "https://github.com/roftLin/dp.git",
-    "author": "roftLin <315779478@qq.com>",
-    "license": "GPL-3.0",
-    "devDependencies": {
-        "coveralls": "^3.1.0",
-        "istanbul": "^0.4.5",
-        "mocha": "^8.0.1"
-    },
-    "scripts": {
-        "test": "mocha",
-        "cover": "istanbul cover ./node_modules/mocha/bin/mocha -- test/ --no-timeouts",
-        "coveralls": "istanbul cover ./node_modules/mocha/bin/mocha --report lcovonly -- test/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
-    }
+  "name": "@roft/dp",
+  "version": "1.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/roftLin/dp.git",
+  "author": "roftLin <315779478@qq.com>",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "coveralls": "^3.1.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^8.0.1"
+  },
+  "scripts": {
+    "test": "mocha",
+    "cover": "istanbul cover ./node_modules/mocha/bin/mocha -- test/ --no-timeouts",
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/mocha --report lcovonly -- test/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+  }
 }

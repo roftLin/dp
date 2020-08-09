@@ -20,4 +20,4 @@ script:
   # - npm run cover
 after_success:
 - npm run coveralls
-- npm publish --registry=https://registry.npmjs.org/:_authToken=$NPM_TOKEN
+- yarn publish --registry=https://registry.yarnpkg.com/:_authToken=$NPM_TOKEN
