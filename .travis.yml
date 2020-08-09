@@ -20,5 +20,5 @@ script:
   # - npm run cover
 after_success:
 - npm run coveralls
-- npm publish
+- npm publish --userconfig=./.npmrc
 
