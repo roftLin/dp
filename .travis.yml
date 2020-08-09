@@ -20,4 +20,5 @@ script:
   # - npm run cover
 after_success:
 - npm run coveralls
-- npm publish --registry=https://registry.npmjs.org/:_authToken=$NPM_TOKEN
+- npm publish
+
