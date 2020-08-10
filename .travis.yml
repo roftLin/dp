@@ -20,5 +20,8 @@ script:
   # - npm run cover
 after_success:
 - npm run coveralls
-- npm publish --userconfig=./.npmrc
+# - npm version patch
+# - git commit -am 'chore:build'
+- npm publish --access public
+# - git push xxxxxxx --tags
 
