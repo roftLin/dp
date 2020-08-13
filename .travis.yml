@@ -2,27 +2,32 @@ sudo: false
 language: node_js
 os:
   - linux
-  # - osx
 node_js:
-  # - 6
-  # - 8
-  # - 9
-  # - 10
   - stable 
 branches:
   only:
   - master
-install:
-- npm install
-script:
-  # - npm run lint
-  # - npm run build
-  # - npm run cover
-after_success:
-- npm run coveralls
-# - npm version patch
-# - git commit -am 'chore:build'
-- npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}" && npm publish
-- npm publish --access public
-# - git push xxxxxxx --tags
-
+stages:
+  - build
+  - test
+  - deploy 
+before_script:
+  - echo before_script
+job_build:
+  stage: build
+  script:
+  - echo job_build
+job_test_1:
+  stage: test
+  script:
+  - echo job_test_1
+job_test_2:
+  stage: test
+  script:
+  - echo job_test_2
+job_deploy:
+  stage: deploy
+  script:
+  - echo job_deploy  
+after_script:
+  - echo after_script 
