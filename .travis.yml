@@ -7,27 +7,23 @@ node_js:
 branches:
   only:
   - master
-stages:
-  - build
-  - test
-  - deploy 
+before_install:
+  - echo before_install
+install:
+  - echo install
 before_script:
   - echo before_script
-job_build:
-  stage: build
-  script:
-  - echo job_build
-job_test_1:
-  stage: test
-  script:
-  - echo job_test_1
-job_test_2:
-  stage: test
-  script:
-  - echo job_test_2
-job_deploy:
-  stage: deploy
-  script:
-  - echo job_deploy  
+script:
+  - echo script  
 after_script:
-  - echo after_script 
+  - echo after_script
+after_success:
+  - echo after_success
+after_failure:
+  - echo after_failure  
+before_deploy:
+  - echo before_deploy
+deploy:
+  - echo deploy
+after_deploy:
+  - echo after_deploy
