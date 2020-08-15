@@ -15,12 +15,12 @@ jobs:
     - stage: build
       script: echo build
     - stage: test
-      script: npm run coveralls
+      script: npm run coveralls -repotoken $COVERALLS_TOKEN
     - stage: deploy
       script: echo deploy
       deploy:
         provider: npm
-        api_key: "$NPM_TOKEN"
+        api_key: "$NPM_TOKEN" 
         on: 
           branch: master
           tags: true
