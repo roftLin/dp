@@ -10,7 +10,7 @@ before_script:
 
 jobs:
   include:
-   - stage: install
+    - stage: install
       script: npm install
     - stage: build
       script: echo build
