@@ -4,24 +4,27 @@ os:
   - linux
 node_js:
   - stable 
-branches:
-  only:
-  - master
-before_install:
-  - echo before_install
+
 before_script:
   - echo before_script
 
 jobs:
   include:
+   - stage: install
+      script: npm install
     - stage: build
       script: echo build
     - stage: test
-      script: echo test
+      script: npm run coveralls
     - stage: deploy
       script: echo deploy
+      deploy:
+        provider: npm
+        api_key: "$NPM_TOKEN"
+        on: 
+          branch: master
+          tags: true
 
-after_deploy:
-  - echo after_deploy
 after_script:
   - echo after_script
+  
