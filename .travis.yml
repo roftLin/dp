@@ -5,10 +5,12 @@ os:
 node_js:
   - stable 
 
-before_script:
+install:
   - npm install
+script:
+  # - npm run lint
+  # - npm run build
   - npm run coveralls
-
 deploy:
   provider: npm
   email: 315779478@qq.com
