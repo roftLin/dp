@@ -12,10 +12,10 @@ jobs:
   include:
     - stage: install
       script: npm install
-    - stage: build
-      script: echo build
-    - stage: test
-      script: npm run coveralls -repotoken $COVERALLS_TOKEN
+    # - stage: build
+    #   script: echo build
+    # - stage: test
+    #   script: npm run coveralls -repotoken $COVERALLS_TOKEN
     - stage: deploy
       script: echo deploy
       deploy:
