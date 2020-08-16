@@ -10,8 +10,8 @@ before_script:
 
 jobs:
   include:
-    - stage: install
-      script: npm install
+    # - stage: install
+    #   script: npm install
     # - stage: build
     #   script: echo build
     # - stage: test
@@ -20,10 +20,13 @@ jobs:
       script: echo deploy
       deploy:
         provider: npm
+        email: 315779478@qq.com
         api_key: "$NPM_TOKEN" 
         on: 
           branch: master
           tags: true
+        tag: latest
+        condition: '$TRAVIS_TAG =~ ^v[0-9]+.[0-9]+.[0-9]+$'
 
 after_script:
   - echo after_script
