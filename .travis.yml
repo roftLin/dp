@@ -15,13 +15,14 @@ script:
 after_success:
   - npm version patch
   - git commit -am 'chore:build'
+  - git config -–global user.name "roftLin"   
+  - git config –-global user.email "315779478@qq.com"
   - git remote add upstream https://${GITHUB_TOKEN}@github.com/roftLin/dp.git
-  - echo ${GITHUB_TOKEN}
   - git fetch upstream
   - git remote -v
   # - npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}" && npm publish --access public
   # - npm config set '//npm.pkg.github.com/:_authToken' "${GITHUB_TOKEN}" && npm publish --access public
-  - git push --tags
+  - git push upstream --tags
 
 # deploy:
 #   provider: npm
