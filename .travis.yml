@@ -24,7 +24,7 @@ after_failure:
   - echo $TRAVIS_TAG
   - git tag -d $TRAVIS_TAG
   - git push :$TRAVIS_TAG  
-after_failure:
+after_success:
   - echo $TRAVIS_TAG
 after_script:
   - echo after_script
