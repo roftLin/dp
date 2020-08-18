@@ -15,7 +15,7 @@ script:
 after_success:
   - npm version patch
   - git commit -am 'chore:build'
-  - git set remote add upstream https://${GITHUB_TOKEN}@github.com/roftLin/dp.git
+  - git remote add upstream https://${GITHUB_TOKEN}@github.com/roftLin/dp.git
   - echo ${GITHUB_TOKEN}
   - git fetch upstream
   - git remote -v
