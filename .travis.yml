@@ -15,8 +15,11 @@ script:
 after_success:
   - npm version patch
   - git commit -am 'chore:build'
-  - npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}" && npm publish --access public
-  - npm config set '//npm.pkg.github.com/:_authToken' "${GITHUB_TOKEN}" && npm publish --access public
+  - git set remote add upstream "https://${GITHUB_TOKEN}@github.com/roftLin/dp.git"
+  - git fetch upstream
+  - git remote -v
+  # - npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}" && npm publish --access public
+  # - npm config set '//npm.pkg.github.com/:_authToken' "${GITHUB_TOKEN}" && npm publish --access public
   - git push --tags
 
 # deploy:
