@@ -13,9 +13,8 @@ script:
   - npm run coveralls
 
 after_success:
-  - export IS_DEPLOYING=$(cat package.json | grep -Eo '\"isDeploying\":.*'| sed "s/\"isDeploying\":.\(.*\)\1//")
+  - export IS_DEPLOYING=$(cat package.json | grep -Eo '\"isDeploying\":.*'| sed "s/\"isDeploying\":.\(.*\)\1//") &&  [ "$IS_DEPLOYING" == "false" ] && skip
   - echo $IS_DEPLOYING
-  - "$IS_DEPLOYING" == "false" && skip
   # - npm version patch
   # - git commit -am 'chore:build'
   # - git config -–global user.name "roftLin"   
