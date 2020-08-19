@@ -40,4 +40,4 @@ notifications:
     recipients:
       - 315779478@qq.com
     on_success: never # default: change
-    on_failure: always # default: always  
+    on_failure: always # default: always 1  
