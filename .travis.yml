@@ -15,7 +15,7 @@ script:
 after_success:
   - export IS_DEPLOYING=$(cat package.json | grep -Eo '\"isDeploying\":.*'| sed "s/\"isDeploying\":.\(.*\)\1//")
   - echo $IS_DEPLOYING
-  - [ "$IS_DEPLOYING" == "false" ] && skip
+  - "$IS_DEPLOYING" == "false" && skip
   # - npm version patch
   # - git commit -am 'chore:build'
   # - git config -–global user.name "roftLin"   
@@ -26,7 +26,7 @@ after_success:
   # - npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}" && npm publish --access public
   # - npm config set '//npm.pkg.github.com/:_authToken' "${GITHUB_TOKEN}" && npm publish --access public
   # - git push upstream --tags
-  # - git push upstream [ $b == 5 ]
+  # - git push upstream
 
 # deploy:
 #   provider: npm
