@@ -14,7 +14,7 @@ script:
 
 after_success:
   - export IS_DEPLOYING = $(cat package.json | grep -Eo '\"isDeploying\":.*'| sed "s/\"isDeploying\": \(.*\)\1//")
-  - echo IS_DEPLOYING
+  - echo $IS_DEPLOYING
   # - npm version patch
   # - git commit -am 'chore:build'
   # - git config -–global user.name "roftLin"   
