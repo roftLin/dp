@@ -11,8 +11,10 @@
     "mocha": "^8.0.1"
   },
   "scripts": {
+    "deploy": "node ./deploy/deploy.js",
     "test": "mocha",
     "cover": "istanbul cover ./node_modules/mocha/bin/mocha -- test/ --no-timeouts",
     "coveralls": "istanbul cover ./node_modules/mocha/bin/mocha --report lcovonly -- test/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
-  }
+  },
+  "isDeploying": true
 }

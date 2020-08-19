@@ -23,6 +23,7 @@ after_success:
   # - npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}" && npm publish --access public
   # - npm config set '//npm.pkg.github.com/:_authToken' "${GITHUB_TOKEN}" && npm publish --access public
   - git push upstream --tags
+  - git push upstream 
 
 # deploy:
 #   provider: npm
@@ -39,4 +40,4 @@ notifications:
     recipients:
       - 315779478@qq.com
     on_success: never # default: change
-    on_failure: always # default: always  12
+    on_failure: always # default: always  
