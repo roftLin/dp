@@ -13,17 +13,19 @@ script:
   - npm run coveralls
 
 after_success:
-  - npm version patch
-  - git commit -am 'chore:build'
-  - git config -–global user.name "roftLin"   
-  - git config –-global user.email "315779478@qq.com"
-  - git remote add upstream https://${GITHUB_TOKEN}@github.com/roftLin/dp.git
-  - git fetch upstream
-  - git remote -v
+  if: branch = master1
+  - echo xxxxxxxxxxxxxxxxxx
+  # - npm version patch
+  # - git commit -am 'chore:build'
+  # - git config -–global user.name "roftLin"   
+  # - git config –-global user.email "315779478@qq.com"
+  # - git remote add upstream https://${GITHUB_TOKEN}@github.com/roftLin/dp.git
+  # - git fetch upstream
+  # - git remote -v
   # - npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}" && npm publish --access public
   # - npm config set '//npm.pkg.github.com/:_authToken' "${GITHUB_TOKEN}" && npm publish --access public
-  - git push upstream --tags
-  - git push upstream 
+  # - git push upstream --tags
+  # - git push upstream 
 
 # deploy:
 #   provider: npm
@@ -40,4 +42,4 @@ notifications:
     recipients:
       - 315779478@qq.com
     on_success: never # default: change
-    on_failure: always # default: always 1  
+    on_failure: always # default: always 1 2 3
