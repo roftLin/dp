@@ -4,7 +4,9 @@ os:
   - linux
 node_js:
   - stable 
-
+env:
+  global:
+    - GH_REF: github.com/roftLin/dp.git
 install:
   - npm install
 script:
@@ -26,9 +28,8 @@ after_success:
 
   # # # 2、重置标记位，防止下次提交进入发布流程
   - npm run deploy
-  - git add .
-  - git commit --amend --no-edit
-  - git push -u origin master
+  - git commit -a --amend --no-edit
+  - git push -f https://${GITHUB_TOKEN}@${GH_REF} master
   
   # - export IS_NPMSUCCESS=$(npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}" && npm publish --access public)
   # - echo $IS_NPMSUCCESS
