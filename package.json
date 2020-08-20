@@ -1,6 +1,6 @@
 {
   "name": "@roft/dp",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "main": "index.js",
   "repository": "https://github.com/roftLin/dp.git",
   "author": "roftLin <315779478@qq.com>",
@@ -16,5 +16,5 @@
     "cover": "istanbul cover ./node_modules/mocha/bin/mocha -- test/ --no-timeouts",
     "coveralls": "istanbul cover ./node_modules/mocha/bin/mocha --report lcovonly -- test/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
-  "isDeploying": true
+  "isDeploying": false
 }
