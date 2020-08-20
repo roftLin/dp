@@ -13,19 +13,31 @@ script:
   - npm run coveralls
 
 after_success:
+  # 1、标志位为true进入发布流程 2、重置标记位，防止下次提交进入发布流程
   - export IS_DEPLOYING=$(cat package.json | grep -Eo '\"isDeploying\":.*'| sed "s/\"isDeploying\":.\(.*\)\1//") &&  [ "$IS_DEPLOYING" == "false" ] && exit 0
   - echo $IS_DEPLOYING
-  # - npm version patch
-  # - git commit -am 'chore:build'
-  # - git config -–global user.name "roftLin"   
-  # - git config –-global user.email "315779478@qq.com"
-  # - git remote add upstream https://${GITHUB_TOKEN}@github.com/roftLin/dp.git
-  # - git fetch upstream
-  # - git remote -v
+
+  # git账户验证
+  - git config -–global user.name "roftLin"   
+  - git config –-global user.email "315779478@qq.com"
+  - git remote add upstream https://${GITHUB_TOKEN}@github.com/roftLin/dp.git
+  - git fetch upstream
+  - git remote -v
+
+  # 2、重置标记位，防止下次提交进入发布流程
+  - npm run deploy
+  - git add .
+  - git commit --amend --no-edit
+  - git push upstream
+  
   # - npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}" && npm publish --access public
   # - npm config set '//npm.pkg.github.com/:_authToken' "${GITHUB_TOKEN}" && npm publish --access public
-  # - git push upstream --tags
-  # - git push upstream
+  
+  # 完成发布后自动打tag
+  # - git commit -am 'chore:build'
+  - npm version patch
+  - git push upstream --tags
+  - git push upstream
 
 # deploy:
 #   provider: npm
