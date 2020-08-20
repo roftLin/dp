@@ -22,7 +22,7 @@ after_success:
   # git账户验证
   - git config -–global user.name "roftLin"   
   - git config –-global user.email "315779478@qq.com"
-  - git log
+  - git log -2
   - git fetch
   # - git remote add upstream https://${GITHUB_TOKEN}@github.com/roftLin/dp.git
   # - git fetch upstream
@@ -31,7 +31,7 @@ after_success:
   # # # 2、重置标记位，防止下次提交进入发布流程
   - npm run deploy
   - git commit -a --amend --no-edit
-  - git push -f https://${GITHUB_TOKEN}@${GH_REF} master
+  - git push -f https://${GITHUB_TOKEN}@${GH_REF} master:master
   
   # - export IS_NPMSUCCESS=$(npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}" && npm publish --access public)
   # - echo $IS_NPMSUCCESS
