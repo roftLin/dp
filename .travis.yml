@@ -30,9 +30,10 @@ after_success:
   # - git commit --amend --no-edit
   # - git push upstream master
   
-  - export IS_NPMSUCCESS=$(npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}" && npm publish --access public)
-  - echo $IS_NPMSUCCESS
-  # - npm config set '//npm.pkg.github.com/:_authToken' "${GITHUB_TOKEN}" && npm publish --access public
+  # - export IS_NPMSUCCESS=$(npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}" && npm publish --access public)
+  # - echo $IS_NPMSUCCESS
+  - export IS_GITPKGSUCCESS=$(npm config set '//npm.pkg.github.com/:_authToken' "${GITHUB_TOKEN}" && npm publish --access public)
+  - echo $IS_GITPKGSUCCESS
 
   # 完成发布后自动打tag
   # - git commit -am 'chore:build'
