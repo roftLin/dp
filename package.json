@@ -11,7 +11,8 @@
     "mocha": "^8.0.1"
   },
   "scripts": {
-    "deploy": "node ./deploy/deploy.js",
+    "pre:deploy": "node ./deploy/deploy.js",
+    "deploy": "git commit -am 'deploy' && git push -f origin master:master",
     "test": "mocha",
     "cover": "istanbul cover ./node_modules/mocha/bin/mocha -- test/ --no-timeouts",
     "coveralls": "istanbul cover ./node_modules/mocha/bin/mocha --report lcovonly -- test/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"

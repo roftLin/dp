@@ -24,13 +24,13 @@ after_success:
   - git config –-global user.email "315779478@qq.com"
   - git log -1
   - git checkout master
-  # - git remote add upstream https://${GITHUB_TOKEN}@github.com/roftLin/dp.git
-  # - git remote -v
+  - git remote origin set-url https://${GITHUB_TOKEN}@${GH_REF}
+  - git remote -v
 
   # # # 2、重置标记位，防止下次提交进入发布流程
   - npm run deploy
-  - git commit -a --amend --no-edit
-  - git push -f https://${GITHUB_TOKEN}@${GH_REF} master:master
+  # - git commit -a --amend --no-edit
+  # - git push -f origin master:master
   
   # - export IS_NPMSUCCESS=$(npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}" && npm publish --access public)
   # - echo $IS_NPMSUCCESS
