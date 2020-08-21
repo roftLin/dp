@@ -22,10 +22,9 @@ after_success:
   # git账户验证
   - git config -–global user.name "roftLin"   
   - git config –-global user.email "315779478@qq.com"
-  - git log -2
-  - git branch
+  - git log -1
+  - git checkout master
   # - git remote add upstream https://${GITHUB_TOKEN}@github.com/roftLin/dp.git
-  # - git fetch upstream
   # - git remote -v
 
   # # # 2、重置标记位，防止下次提交进入发布流程
