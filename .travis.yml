@@ -23,7 +23,7 @@ after_success:
   - git config -–global user.name "roftLin"   
   - git config –-global user.email "315779478@qq.com"
   - git log -2
-  - git fetch
+  - git branch
   # - git remote add upstream https://${GITHUB_TOKEN}@github.com/roftLin/dp.git
   # - git fetch upstream
   # - git remote -v
