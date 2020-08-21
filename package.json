@@ -12,7 +12,7 @@
   },
   "scripts": {
     "predeploy": "node ./deploy/deploy.js",
-    "deploy": "git commit -a --amend --no-edit && git push -f origin master:master",
+    "deploy": "git status | grep -Eo ahead && git commit -a --amend --no-edit || git commit -am deploy && git push -f origin master:master",
     "test": "mocha",
     "cover": "istanbul cover ./node_modules/mocha/bin/mocha -- test/ --no-timeouts",
     "coveralls": "istanbul cover ./node_modules/mocha/bin/mocha --report lcovonly -- test/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
