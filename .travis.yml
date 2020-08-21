@@ -22,9 +22,8 @@ after_success:
   # git账户验证
   - git config -–global user.name "roftLin"   
   - git config –-global user.email "315779478@qq.com"
-  - git log -1
   - git checkout master
-  - git remote origin set-url https://${GITHUB_TOKEN}@${GH_REF}
+  - git remote set-url origin https://${GITHUB_TOKEN}@${GH_REF}
   - git remote -v
 
   # # # 2、重置标记位，防止下次提交进入发布流程
